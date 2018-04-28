@@ -1,16 +1,16 @@
-###夏洛克框架
-夏洛克所用到的组件列表如下：
-####*开源组件*
+### 夏洛克框架.   
+夏洛克所用到的组件列表如下：      
+#### *开源组件*.  
 * elastic search, kafka, zookeeper, mysql, ngix
-####*自研组件*
+#### *自研组件*.  
 * itoa, stream, persistent, event, curator, cell, router, agent, dist
 
-####**组件相互关系**
+#### **组件相互关系**
 
-![架构图](/Users/jackyyin/Documents/arc/arc.001.jpeg)
-#####夏洛克的25个数据流向解说
+![架构图](https://github.com/yinchuanwang/sharplookQA/blob/master/arc.001.jpeg)
+##### 夏洛克的25个数据流向解说
 
-######系统启动后(API调用)
+###### 系统启动后(API调用)
 
 + ##### 创建系统通讯需要的topic
 
@@ -31,7 +31,7 @@
     + 查看elastic search的地址配置是否正确
     + 查看日志，查看往elastic search的数据写入是否成功
 
-######数据采集
+###### 数据采集
 + ##### 创建数据流采集对应的Topic
   + 5 ITOA发送消息给Curator创建相关topic之请求
   + 6 Curator调用zk接口创建相关topic请求
@@ -46,7 +46,7 @@
   + 12 Flow开始采集数据并且上报给Router - tcp message
   + 13 Router把收到的消息写入对应的Topic - Kafka message
 
-######数据解析(Kafka消息)
+###### 数据解析(Kafka消息)
 + ##### 预览数据解析对应的源Topic
 
   + 14 ITOA发送预览消息给Curator
@@ -66,7 +66,7 @@
 
   + 19 Kafka Stream线程中的Kafka Producer把生成的新的消息，定期写入新的目标Topic
 
-######数据存储(Kafka消息)
+###### 数据存储(Kafka消息)
 
 
 + ##### 启动数据流存储任务
@@ -76,7 +76,7 @@
   + 23 存储任务中的Es Client把转化好的存储结构批量写入elastic search
 
 
-######数据查询(Http请求)
+###### 数据查询(Http请求)
   + 24 前端把用户输入的spl查询语句发送给ITOA后，ITOA转发给Query服务
   + 25 Query服务把用户输入的spl语句转化为dsl后，调用es进行实际查询，并把es返回的查询结果返回给ITOA,前端
 
