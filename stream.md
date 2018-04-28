@@ -2,7 +2,7 @@
 
 #### 数据流解析拆分
 
-![数据流](/Users/jackyyin/Documents/stream/stream.001.jpeg)
+![数据流](https://github.com/yinchuanwang/sharplookQA/blob/master/stream.001.jpeg)
 
 #### 问题诊断
 + 如果节点5失败可能是什么原因？
