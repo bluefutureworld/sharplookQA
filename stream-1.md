@@ -17,7 +17,7 @@
 
 
 
-#数据流启动成功，但是目标topic并没有消息输出！！！
+# 数据流启动成功，但是目标topic并没有消息输出！！！
 
 
 
@@ -37,9 +37,9 @@
 
 
 
-![kstream 内部](/Users/jackyyin/Documents/streaminside/streaminside.001.jpeg)
+![kstream 内部](https://github.com/yinchuanwang/sharplookQA/blob/master/streaminside.001.jpeg)
 
-####诊断分析
+#### 诊断分析
 + Filter构造失败的原因是？
 + kstream构造失败的原因是?
 + kstream的状态一直无法切换到running的原因是？
@@ -61,7 +61,7 @@
 
 
 
-####诊断过程
+#### 诊断过程
 + 查看数据流对应的日志文件。$streamdir/logs/worker/worker-dataSetName.log
     + log文件里面有filter的构造字符串
     + log文件里面有kstream的构造字符串
