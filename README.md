@@ -6,6 +6,6 @@
 - [数据流或者存储流启动失败](https://github.com/yinchuanwang/sharplookQA/blob/master/stream.md)
 - [数据流启动了但是没有数据](https://github.com/yinchuanwang/sharplookQA/blob/master/stream-1.md)
 - [数据流解析慢或者不稳定](https://github.com/yinchuanwang/sharplookQA/blob/master/stream-perf.md)
-  [GC导致的数据流解析暂停](https://github.com/yinchuanwang/sharplookQA/blob/master/stream_gc.md)
+- [GC导致的数据流解析暂停](https://github.com/yinchuanwang/sharplookQA/blob/master/kstream_gc.md)
 
 
