@@ -17,17 +17,51 @@
 ##### *5 top -[H]p*
 + 当觉得慢的时候，对各个组件进程检查一下，如果发现持续CPU居高不下，你就离真相不远了
 
-##### *6 jstat -gcutil pid 1000*
+##### *6 iostat -dkx 2
++ iops的表现，会非常大影响es的写入和查询
+
+##### *7 jstat -gcutil pid 1000*
 + 当没事的时候，当没有方向时，针对所有的java组件，看看gc的情况，说不定就能发现虽然它看起来活着，但实际已经死了。
 
-##### *7 jmap -histo:live pid*
+##### *8 jmap -histo:live pid*
 + 当发现已经死亡，且重生后还会不间断死亡的时候，要看看到底是怎么死的。java堆对象统计。
 
-##### *8 jstack  pid*
-+ 当发现很慢，很卡，cpu很高时，可以看看是谁在搞事。 java 堆栈统计。
+##### *9 jstack  pid*
++ 当发现很慢，很卡，cpu很高时，可以看看是谁在搞事情。 java 堆栈统计。
 
-#### *9 our brain*
-+ 当以上手段都用尽还是不能解脱时，靠我们的大脑，靠我们细致缜密的逻辑推断。
+##### *10 kafka metrics
++ jmx: [kafka monitor](https://docs.confluent.io/current/kafka/monitoring.html)
+  + broker metric
+    + UnderReplicatedPartitions
+    + OfflinePartitionsCount
+    + ActiveControllerCount
+    + BytesInPerSec
+    + BytesOutPerSec
+    + NetworkProcessorAvgIdlePercent
+    + RequestQueueSize
+    + ......
+  + zk metric
+    + ZooKeeperExpiresPerSec
+    + ZooKeeperDisconnectsPerSec
+    + ......
+  + producer metric ....
+  + consumer metric .....
+  + consumer group metric ......
+
++ command: 
+	+ lag: ./kafka-consumer-groups.sh --bootstrap-server [broker] --group [group] --describe
+
++ log: 
+	+ [stream|persistent]/logs/[kafka.log, consumer.log, producer.log]
+
+##### *11 elastic search metrics
++ cat [es cat](https://www.elastic.co/guide/en/elasticsearch/reference/current/cat.html)
+  + health
+  + nodes
+  + indices/shards/segments
+  + allocation/thread pool
+#### *12 our brain*
++ 最关键的还是靠靠AI我们的大脑，靠我们细致缜密的逻辑推断。
 
 
 
