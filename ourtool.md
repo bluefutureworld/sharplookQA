@@ -17,7 +17,7 @@
 ##### *5 top -[H]p*
 + 当觉得慢的时候，对各个组件进程检查一下，如果发现持续CPU居高不下，你就离真相不远了
 
-##### *6 iostat -dkx 2
+##### *6 iostat -dkx 2*
 + iops的表现，会非常大影响es的写入和查询
 
 ##### *7 jstat -gcutil pid 1000*
@@ -29,7 +29,7 @@
 ##### *9 jstack  pid*
 + 当发现很慢，很卡，cpu很高时，可以看看是谁在搞事情。 java 堆栈统计。
 
-##### *10 kafka metrics
+##### *10 kafka metrics*
 + jmx: [kafka monitor](https://docs.confluent.io/current/kafka/monitoring.html)
   + broker metric
     + UnderReplicatedPartitions
@@ -54,7 +54,7 @@
 + log: 
 	+ [stream|persistent]/logs/[kafka.log, consumer.log, producer.log]
 
-##### *11 elastic search metrics
+##### *11 elastic search metrics*
 + cat [es cat](https://www.elastic.co/guide/en/elasticsearch/reference/current/cat.html)
   + health
   + nodes
